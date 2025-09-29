@@ -5,7 +5,7 @@ import { mercurius } from "mercurius";
 import { createAuthContext } from "./context/auth.context";
 import { connectDB } from "./db";
 import { resolvers } from "./graphql/resolvers";
-import { schema, $options } from "./graphql/schema";
+import { schema } from "./graphql/schema";
 
 dotenv.config();
 
