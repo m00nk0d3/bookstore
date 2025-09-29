@@ -12,7 +12,10 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{ts,js}": "eslint --fix"
+    "*.{ts,js}": [
+      "eslint --fix",
+      "tsc --noEmit"
+    ]
   },
   "keywords": [],
   "author": "",
