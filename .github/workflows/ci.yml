@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: ['*']
   pull_request:
-    branches: [main]
+    branches: ['*']
 
 jobs:
   build:
@@ -14,12 +14,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-   
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Cache npm
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
         run: npm install
 
       - name: Lint
         run: npm run lint
+        continue-on-error: false   # fails workflow if lint fails
 
       - name: Type check
         run: npm run type-check
+        continue-on-error: false   # fails workflow if type check fails
+
