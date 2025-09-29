@@ -8,13 +8,12 @@
     "dev": "ts-node src/server.ts",
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint . --ext .ts,.js --fix",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --noEmit --pretty",
     "prepare": "husky install"
   },
   "lint-staged": {
     "*.{ts,js}": [
-      "eslint --fix",
-      "tsc --noEmit --skipLibCheck"
+      "eslint --fix"
     ]
   },
   "keywords": [],
