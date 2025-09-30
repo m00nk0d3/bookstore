@@ -31,6 +31,6 @@ type Mutation {
   deleteBook(id: ID!): Book
   register(email: String!, password: String!, username: String!): AuthPayload!
   login(email: String!, password: String!): AuthPayload!
+  logout: Boolean
 }
-
 `;
