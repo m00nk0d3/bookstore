@@ -11,10 +11,10 @@ USER root
 
 RUN chown -R appuser:appgroup .
 
-USER root
+USER appuser
 
-RUN npm install -g pnpm
-RUN pnpm install
+
+RUN npm install -g pnpm@latest && pnpm install
 
 COPY . .
 
