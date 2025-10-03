@@ -9,12 +9,11 @@ COPY package*.json pnpm-lock.yaml ./
 
 USER root
 
-RUN chown -R appuser:appgroup .
+RUN chown -R appuser:appgroup . && npm install -g pnpm@latest
 
-USER appuser
+USER appuser 
 
-
-RUN npm install -g pnpm@latest && pnpm install
+RUN pnpm install
 
 COPY . .
 
