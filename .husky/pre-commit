@@ -1,10 +1,4 @@
 
-# Use the absolute pnpm path to avoid "not found" errors
-/home/m00nk0d3/.config/nvm/versions/node/v22.19.0/bin/pnpm exec lint-staged --quiet
-/home/m00nk0d3/.config/nvm/versions/node/v22.19.0/bin/pnpm run type-check
-
-
-
 # lint staged files (only .ts / .tsx)
 pnpm exec lint-staged --quiet
 
