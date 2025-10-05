@@ -10,7 +10,10 @@
     "type-check": "tsc --noEmit --pretty",
     "prepare": "husky install",
     "docker": "docker compose up",
-    "dev": "ts-node src/server.ts"
+    "dev": "ts-node src/server.ts",
+    "release:patch": "./scripts/release.sh patch",
+    "release:minor": "./scripts/release.sh minor",
+    "release:major": "./scripts/release.sh major"
   },
   "lint-staged": {
     "*.{ts,js}": [
